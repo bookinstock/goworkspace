@@ -1,11 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"goworkspace/app/foo"
+)
 
 func init() {
-	fmt.Println("init")
+	fmt.Println("main init")
 }
 
 func main() {
-	fmt.Println("main")
+	fmt.Println("main run")
+
+	foo.Run()
 }
