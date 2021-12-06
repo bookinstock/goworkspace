@@ -2,10 +2,7 @@ package main
 
 import (
 	"fmt"
-	"goworkspace/app/cond"
-	"goworkspace/app/foo"
-	"goworkspace/app/list"
-	"goworkspace/app/loop"
+	"goworkspace/app/db/redisx"
 )
 
 func init() {
@@ -15,10 +12,13 @@ func init() {
 func main() {
 	fmt.Println("main run")
 
-	foo.Run()
+	// foo.Run()
 
-	loop.Run()
-	cond.Run()
+	// loop.Run()
+	// cond.Run()
 
-	list.Run()
+	// list.Run()
+
+	// redisx.RunExample1()
+	redisx.Run()
 }
