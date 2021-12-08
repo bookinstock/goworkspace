@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"goworkspace/app/variable"
+	"goworkspace/app/oo"
 )
 
 func init() {
@@ -14,7 +14,7 @@ func main() {
 
 	// foo.Run()
 
-	variable.Run()
+	// variable.Run()
 
 	// cond.Run()
 
@@ -32,6 +32,9 @@ func main() {
 	// fn.Run()
 	// fn.RunLambda()
 	// fn.RunRecursion()
+
+	oo.RunStruct()
+	oo.RunInterface()
 
 	// redisx.RunExample1()
 	// redisx.Run()
