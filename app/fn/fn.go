@@ -12,6 +12,9 @@ func Run() {
 
 	r1, r2 = f4(1, 2)
 	fmt.Println("f4=", r1, r2)
+
+	r := f5(1, 2, 3)
+	fmt.Println("f5=", r)
 }
 
 func f1(a int, b int) int {
@@ -30,4 +33,14 @@ func f4(a, b int) (r1, r2 int) {
 	r1 = a + b
 	r2 = a - b
 	return
+}
+
+// variadic fn
+func f5(nums ...int) int {
+	fmt.Printf("nums= %v %T\n", nums, nums)
+	sum := 0
+	for _, e := range nums {
+		sum += e
+	}
+	return sum
 }

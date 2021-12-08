@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"goworkspace/app/loop"
+	"goworkspace/app/fn"
 )
 
 func init() {
@@ -19,7 +19,7 @@ func main() {
 	// cond.RunIf()
 	// cond.RunSwitch()
 
-	loop.Run()
+	// loop.Run()
 
 	// list.Run()
 
@@ -28,6 +28,7 @@ func main() {
 	// loop.RunRange()
 
 	// fn.Run()
+	fn.RunLambda()
 
 	// redisx.RunExample1()
 	// redisx.Run()
