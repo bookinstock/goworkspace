@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"goworkspace/app/cond"
+	"goworkspace/app/loop"
 )
 
 func init() {
@@ -17,9 +17,9 @@ func main() {
 	// cond.Run()
 
 	// cond.RunIf()
-	cond.RunSwitch()
+	// cond.RunSwitch()
 
-	// loop.Run()
+	loop.Run()
 
 	// list.Run()
 
