@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"goworkspace/app/oo"
+	"goworkspace/app/error"
 )
 
 func init() {
@@ -33,9 +33,11 @@ func main() {
 	// fn.RunLambda()
 	// fn.RunRecursion()
 
-	oo.RunStruct()
-	oo.RunInterface()
-	oo.RunEmbedding()
+	// oo.RunStruct()
+	// oo.RunInterface()
+	// oo.RunEmbedding()
+
+	error.Run()
 
 	// redisx.RunExample1()
 	// redisx.Run()
