@@ -35,6 +35,7 @@ func main() {
 
 	oo.RunStruct()
 	oo.RunInterface()
+	oo.RunEmbedding()
 
 	// redisx.RunExample1()
 	// redisx.Run()
