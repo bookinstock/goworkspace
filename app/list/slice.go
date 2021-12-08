@@ -2,41 +2,68 @@ package list
 
 import "fmt"
 
-func slice() {
-	fmt.Println("---slice--")
+func RunSlice() {
+	// init make
 
-	s1 := make([]int, 2, 4)
-	s1[0] = 1
-	s1[1] = 2
-	// s1[2] = 3 // error
+	s := make([]int, 5)
+	fmt.Println("s=", s)
 
-	s2 := []int{1, 2, 3}
+	s = make([]int, 5, 10)
+	fmt.Println("s=", s)
+
+	// init
+	s = []int{1, 2, 3, 4, 5}
+	fmt.Println("s=", s)
+
+	// set
+	s[1] = 100
+	fmt.Println("s=", s)
+
+	// append
+	s = append(s, 100)
+	fmt.Println("s=", s)
+
+	as := []int{-1, -2}
+	s = append(s, as...)
+	fmt.Println("s=", s)
+
+	// slice it
+	s1 := s[:]
+	s2 := s[1:]
+	s3 := s[:1]
+	s4 := s[1:3]
 
 	fmt.Println("s1=", s1)
 	fmt.Println("s2=", s2)
+	fmt.Println("s3=", s3)
+	fmt.Println("s4=", s4)
 
-	s3 := append(s1, 100)
-	s3 = append(s3, s2...)
-	fmt.Println("s3 = ", s3)
+	// 2d
+	lvl1Len := 2
+	lvl2Len := 3
+	ss := make([][]int, lvl1Len)
+	for i := 0; i < lvl1Len; i++ {
+		ss[i] = make([]int, lvl2Len)
+		for j := 0; j < lvl2Len; j++ {
+			ss[i][j] = (i + 1) * (j + 1)
+		}
+	}
+	fmt.Println("ss=", ss)
 
-	s4 := []int{1, 2, 3, 4, 5}
-	fmt.Println(s4[:])
-	fmt.Println(s4[0:5])
-	fmt.Println(s4[:2])
-	fmt.Println(s4[2:])
-	fmt.Println(s4[2:3])
-
-	var s3d [][][]int = make([][][]int, 2)
-
-	for a := 0; a < 2; a++ {
-		s3d[a] = make([][]int, 3)
-		for b := 0; b < 3; b++ {
-			s3d[a][b] = make([]int, 4)
-			for c := 0; c < 4; c++ {
-				s3d[a][b][c] = a * b * c
+	// 3d
+	lvl1Len = 2
+	lvl2Len = 3
+	lvl3Len := 4
+	sss := make([][][]int, lvl1Len)
+	for i := 0; i < lvl1Len; i++ {
+		sss[i] = make([][]int, lvl2Len)
+		for j := 0; j < lvl2Len; j++ {
+			sss[i][j] = make([]int, lvl3Len)
+			for k := 0; k < lvl3Len; k++ {
+				sss[i][j][k] = (i + 1) * (j + 1) * (k + 1)
 			}
 		}
 	}
+	fmt.Println("sss=", sss)
 
-	fmt.Println("s3d=", s3d)
 }

@@ -2,24 +2,30 @@ package list
 
 import "fmt"
 
-func array() {
-	fmt.Println("---array---")
-	a := [3]int{1, 2, 3}
+func RunArray() {
+	// init
+	a := [5]int{1, 2, 3, 4, 5}
+	fmt.Println("a=", a)
+
 	b := [...]int{1, 2, 3}
+	fmt.Println("b=", b)
 
-	fmt.Println("a=", a, len(a), a[0])
-	fmt.Println("b=", b, len(b), b[0])
+	// set
+	a[1] = 100
+	fmt.Println("a=", a)
 
-	for i, e := range a {
-		fmt.Println("i=", i, "e=", e)
-	}
+	// get
+	fmt.Println("get", a[0])
 
-	var arr2d [3][4]int
-
-	for i := 0; i < 3; i++ {
-		for j := 0; j < 4; j++ {
-			arr2d[i][j] = i * j
+	// 2d
+	var aaa [2][3][4]int
+	for i := 0; i < 2; i++ {
+		for j := 0; j < 3; j++ {
+			for k := 0; k < 4; k++ {
+				aaa[i][j][k] = (i + 1) * (j + 1) * (k + 1)
+			}
 		}
 	}
-	fmt.Println("arr2d=", arr2d)
+	fmt.Println("aaa=", aaa)
+
 }

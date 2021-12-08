@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"goworkspace/app/db/redisx"
+	"goworkspace/app/cond"
 )
 
 func init() {
@@ -14,11 +14,21 @@ func main() {
 
 	// foo.Run()
 
-	// loop.Run()
 	// cond.Run()
+
+	// cond.RunIf()
+	cond.RunSwitch()
+
+	// loop.Run()
 
 	// list.Run()
 
+	// hashmap.Run()
+
+	// loop.RunRange()
+
+	// fn.Run()
+
 	// redisx.RunExample1()
-	redisx.Run()
+	// redisx.Run()
 }
