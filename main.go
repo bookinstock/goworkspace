@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"goworkspace/app/error"
+	"goworkspace/app/goroutine"
 )
 
 func init() {
@@ -37,7 +37,9 @@ func main() {
 	// oo.RunInterface()
 	// oo.RunEmbedding()
 
-	error.Run()
+	// error.Run()
+
+	goroutine.Run()
 
 	// redisx.RunExample1()
 	// redisx.Run()
