@@ -29,9 +29,13 @@ func Run() {
 
 	// channelClose()
 
-	iterateChannel()
+	// iterateChannel()
 
-	time.Sleep(1 * time.Second)
+	// timer()
+
+	ticker()
+
+	time.Sleep(time.Second)
 
 }
 
@@ -243,4 +247,54 @@ func iterateChannel() {
 	}
 
 	fmt.Println("---iterateChannel")
+}
+
+func timer() {
+	t := time.NewTimer(time.Second)
+	a := <-t.C
+	fmt.Println("a=", a)
+
+	t1 := time.NewTimer(time.Second)
+	t2 := time.NewTimer(time.Second * 2)
+
+	go func() {
+		r := <-t1.C
+		fmt.Println("t1 r=", r)
+		s1 := t1.Stop()
+		s2 := t2.Stop()
+		fmt.Println("t1, stop s1=", s1, "s2=", s2)
+	}()
+
+	go func() {
+		r := <-t2.C
+		fmt.Println("t2 r=", r)
+		s1 := t2.Stop()
+		s2 := t2.Stop()
+		fmt.Println("t2, stop s1=", s1, "s2=", s2)
+	}()
+
+	time.Sleep(time.Second * 3)
+}
+
+func ticker() {
+	fmt.Println("ticker")
+	t := time.NewTicker(time.Second)
+	done := make(chan bool)
+
+	go func() {
+		for {
+			select {
+			case msg := <-t.C:
+				fmt.Println("t msg=", msg)
+			case <-done:
+				t.Stop()
+				fmt.Println("done")
+				return
+			}
+		}
+	}()
+
+	time.Sleep(time.Second * 3)
+	done <- true
+	fmt.Println("ticker")
 }
