@@ -39,7 +39,9 @@ func main() {
 
 	// error.Run()
 
-	goroutine.Run()
+	// goroutine.Run()
+	goroutine.RunWorker()
+	// goroutine.RunSync()
 
 	// redisx.RunExample1()
 	// redisx.Run()
