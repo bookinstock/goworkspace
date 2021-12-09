@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"goworkspace/app/goroutine"
+	"goworkspace/app/concurrent"
 )
 
 func init() {
@@ -39,9 +39,10 @@ func main() {
 
 	// error.Run()
 
-	// goroutine.Run()
-	goroutine.RunWorker()
-	// goroutine.RunSync()
+	// concurrent.Run()
+	// concurrent.RunWorker()
+	concurrent.RunSync()
+	// concurrent.RunRateLimit()
 
 	// redisx.RunExample1()
 	// redisx.Run()

@@ -1,4 +1,4 @@
-package goroutine
+package concurrent
 
 import (
 	"fmt"
@@ -93,9 +93,9 @@ func singleWait() {
 	fmt.Println("singleWait r=", <-c)
 }
 
-func multiWait() {
+// func multiWait() {
 
-}
+// }
 
 // select
 func channelSelect() {
