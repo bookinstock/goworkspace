@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"goworkspace/app/str"
+	"goworkspace/app/json"
 )
 
 func init() {
@@ -17,7 +17,7 @@ func main() {
 	// variable.Run()
 
 	// str.Run()
-	str.RunRegex()
+	// str.RunRegex()
 
 	// cond.Run()
 
@@ -50,6 +50,8 @@ func main() {
 	// concurrent.RunRange()
 	// concurrent.RunSync()
 	// concurrent.RunRateLimit()
+
+	json.Run()
 
 	// sort.Run()
 
