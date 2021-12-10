@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"goworkspace/app/sort"
+	"goworkspace/app/error"
 )
 
 func init() {
@@ -38,6 +38,7 @@ func main() {
 	// oo.RunEmbedding()
 
 	// error.Run()
+	error.RunPanic()
 
 	// concurrent.Run()
 	// concurrent.RunWorker()
@@ -45,7 +46,7 @@ func main() {
 	// concurrent.RunSync()
 	// concurrent.RunRateLimit()
 
-	sort.Run()
+	// sort.Run()
 
 	// redisx.RunExample1()
 	// redisx.Run()
