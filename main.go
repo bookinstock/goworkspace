@@ -39,8 +39,9 @@ func main() {
 
 	// error.Run()
 
-	concurrent.Run()
+	// concurrent.Run()
 	// concurrent.RunWorker()
+	concurrent.RunRange()
 	// concurrent.RunSync()
 	// concurrent.RunRateLimit()
 
