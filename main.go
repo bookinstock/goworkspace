@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"goworkspace/app/collection"
+	"goworkspace/app/str"
 )
 
 func init() {
@@ -16,6 +16,9 @@ func main() {
 
 	// variable.Run()
 
+	// str.Run()
+	str.RunRegex()
+
 	// cond.Run()
 
 	// cond.RunIf()
@@ -24,8 +27,8 @@ func main() {
 	// loop.Run()
 
 	// list.Run()
-
-	collection.Run()
+	//
+	// collection.Run()
 
 	// hashmap.Run()
 
