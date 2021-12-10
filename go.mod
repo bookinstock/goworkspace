@@ -9,6 +9,7 @@ require (
 	github.com/go-redis/redis/v8 v8.11.4 // indirect
 	github.com/go-redis/redis_rate/v9 v9.1.2 // indirect
 	github.com/go-redis/redismock/v8 v8.0.6 // indirect
+	github.com/panjf2000/ants/v2 v2.4.7 // indirect
 	github.com/vmihailenco/bufpool v0.1.11 // indirect
 	github.com/vmihailenco/tagparser v0.1.2 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
