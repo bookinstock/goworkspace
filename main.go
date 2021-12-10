@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"goworkspace/app/error"
+	"goworkspace/app/collection"
 )
 
 func init() {
@@ -25,6 +25,8 @@ func main() {
 
 	// list.Run()
 
+	collection.Run()
+
 	// hashmap.Run()
 
 	// loop.RunRange()
@@ -38,7 +40,7 @@ func main() {
 	// oo.RunEmbedding()
 
 	// error.Run()
-	error.RunPanic()
+	// error.RunPanic()
 
 	// concurrent.Run()
 	// concurrent.RunWorker()
