@@ -9,6 +9,13 @@ func RunInterface() {
 
 	call_a(x)
 	call_a(y)
+
+	fmt.Println("----")
+
+	hi := Hi{"hi~"}
+	hello := Hello{"hello~"}
+	doGreet(hi)
+	doGreet(hello)
 }
 
 type A interface {
@@ -31,4 +38,44 @@ func (y Y) a() {
 
 func call_a(a A) {
 	a.a()
+}
+
+type Greet interface {
+	greet()
+}
+
+type Hi struct {
+	v string
+}
+
+type Hello struct {
+	m string
+}
+
+func (hi Hi) greet() {
+	fmt.Println("hi")
+}
+
+func (hello Hello) greet() {
+	fmt.Println("hello")
+}
+
+func doGreet(g Greet) {
+	g.greet()
+
+	if hi, ok := g.(Hi); ok {
+		fmt.Println("if hi v=", hi.v)
+	}
+	if hello, ok := g.(Hello); ok {
+		fmt.Println("if hi v=", hello.m)
+	}
+
+	switch g.(type) {
+	case Hi:
+		fmt.Println("is hi")
+	case Hello:
+		fmt.Println("is hello")
+	default:
+		fmt.Println("default")
+	}
 }

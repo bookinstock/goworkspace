@@ -2,6 +2,7 @@ package concurrent
 
 import (
 	"fmt"
+	"sync"
 	"time"
 )
 
@@ -33,10 +34,11 @@ func Run() {
 
 	// timer()
 
-	ticker()
+	// ticker()
+
+	statefulGo()
 
 	time.Sleep(time.Second)
-
 }
 
 // go
@@ -297,4 +299,91 @@ func ticker() {
 	time.Sleep(time.Second * 3)
 	done <- true
 	fmt.Println("ticker")
+}
+
+// stateful
+
+type Actionalbe interface {
+	action()
+}
+
+type Action struct {
+}
+
+type GetAction struct {
+	Action
+	k string
+	c chan int
+}
+
+type AddAction struct {
+	Action
+	k string
+	v int
+}
+
+func (a Action) action() {
+}
+
+func statefulGo() {
+	c := make(chan Actionalbe)
+
+	// state worker
+	go func() {
+		m := make(map[string]int)
+		for {
+			switch action := <-c; action.(type) {
+			case GetAction:
+				a := action.(GetAction)
+				v := m[a.k]
+				fmt.Println("get k=", a.k, "v=", v, "m=", m)
+				a.c <- v
+			case AddAction:
+				a := action.(AddAction)
+				m[a.k] += a.v
+				fmt.Println("add k=", a.k, "v=", a.v, "m=", m)
+			default:
+				fmt.Println("default")
+			}
+		}
+	}()
+
+	// add job
+	var wgAdd sync.WaitGroup
+	add_actions := []AddAction{
+		{k: "a", v: 1},
+		{k: "b", v: 1},
+		{k: "c", v: 1},
+		{k: "a", v: 2},
+		{k: "b", v: 1},
+		{k: "a", v: 1},
+		{k: "b", v: 1},
+	}
+	for _, action := range add_actions {
+		wgAdd.Add(1)
+		go func(action AddAction) {
+			defer wgAdd.Done()
+			c <- action
+		}(action)
+	}
+	wgAdd.Wait()
+
+	// get job
+	var wgGet sync.WaitGroup
+	get_actions := []GetAction{
+		{k: "a", c: make(chan int)},
+		{k: "b", c: make(chan int)},
+		{k: "c", c: make(chan int)},
+	}
+	for _, action := range get_actions {
+		wgGet.Add(1)
+		go func(action GetAction) {
+			defer wgGet.Done()
+			c <- action
+			fmt.Println("recevier k=,", action.k, "r=", <-action.c)
+		}(action)
+	}
+	wgGet.Wait()
+
+	fmt.Println("done!!!")
 }

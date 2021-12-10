@@ -39,9 +39,9 @@ func main() {
 
 	// error.Run()
 
-	// concurrent.Run()
+	concurrent.Run()
 	// concurrent.RunWorker()
-	concurrent.RunSync()
+	// concurrent.RunSync()
 	// concurrent.RunRateLimit()
 
 	// redisx.RunExample1()
