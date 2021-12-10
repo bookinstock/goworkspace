@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"goworkspace/app/concurrent"
+	"goworkspace/app/sort"
 )
 
 func init() {
@@ -41,9 +41,11 @@ func main() {
 
 	// concurrent.Run()
 	// concurrent.RunWorker()
-	concurrent.RunRange()
+	// concurrent.RunRange()
 	// concurrent.RunSync()
 	// concurrent.RunRateLimit()
+
+	sort.Run()
 
 	// redisx.RunExample1()
 	// redisx.Run()
