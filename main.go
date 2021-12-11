@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"goworkspace/app/str"
+	"goworkspace/app/file"
 )
 
 func init() {
@@ -65,7 +65,9 @@ func main() {
 	// http.RunUrl()
 
 	// str.RunSha1()
-	str.RunBase64()
+	// str.RunBase64()
+
+	file.Run()
 
 	// redisx.RunExample1()
 	// redisx.Run()
