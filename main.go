@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"goworkspace/app/num"
+	"goworkspace/app/http"
 )
 
 func init() {
@@ -60,7 +60,9 @@ func main() {
 	// dt.RunParse()
 
 	// num.RunRand()
-	num.RunParse()
+	// num.RunParse()
+
+	http.RunUrl()
 
 	// redisx.RunExample1()
 	// redisx.Run()
