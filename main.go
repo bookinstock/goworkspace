@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"goworkspace/app/dt"
+	"goworkspace/app/num"
 )
 
 func init() {
@@ -57,7 +57,10 @@ func main() {
 
 	// dt.Run()
 	// dt.RunEpoch()
-	dt.RunParse()
+	// dt.RunParse()
+
+	// num.RunRand()
+	num.RunParse()
 
 	// redisx.RunExample1()
 	// redisx.Run()
