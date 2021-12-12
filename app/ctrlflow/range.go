@@ -2,7 +2,7 @@ package ctrlflow
 
 import "fmt"
 
-func RunRange() {
+func _range() {
 
 	a := []int{1, 2, 3, 4, 5}
 	b := map[int]int{1: 11, 2: 22, 3: 33}

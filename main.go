@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
-	"goworkspace/app/file"
+	"goworkspace/app/collection"
+	"goworkspace/app/ctrlflow"
+	"goworkspace/app/object"
 )
 
 func init() {
@@ -11,6 +13,10 @@ func init() {
 
 func main() {
 	fmt.Println("main run")
+
+	ctrlflow.Run()
+	collection.Run()
+	object.Run()
 
 	// foo.Run()
 
@@ -67,7 +73,7 @@ func main() {
 	// str.RunSha1()
 	// str.RunBase64()
 
-	file.Run()
+	// file.Run()
 
 	// redisx.RunExample1()
 	// redisx.Run()

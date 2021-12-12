@@ -1,84 +1,62 @@
 package ctrlflow
 
-import "fmt"
-
-func RunCondition() {
+func condition() {
 	ifelse()
 	switchCond()
 	switchValue()
-	switchInit()
 	swtichType()
 }
 
 func ifelse() {
-	a := 10
-
-	if a < 5 {
-		fmt.Println("if- 1 a=", a)
-	} else if a < 10 {
-		fmt.Println("if- 2 a=", a)
+	// if else if else
+	a := 1
+	if a < 0 {
+		p("a less than zero")
+	} else if a > 0 {
+		p("a greater than zero")
 	} else {
-		fmt.Println("if- 3 a=", a)
+		p("a is zero")
 	}
 
-	if x := 5; x == 5 {
-		fmt.Println("x is 5 x = ", x)
+	// if else assign
+	if b := 1; b < 0 {
+		p("b less than zero")
 	} else {
-		fmt.Println("x else x=", x)
+		p("else -> b= ", b)
 	}
 }
 
 func switchCond() {
-	fmt.Println("---switchCond---")
-	a := 101
+	a := 1
 	switch {
-	case a < 5:
-		fmt.Println("< 5", "a=", a)
-	case a < 10:
-		fmt.Println("< 10", "a=", a)
-	case a < 15, a > 100:
-		fmt.Println("< 15 or > 100", "a=", a)
+	case a < 0:
+		p("a less than zero")
+	case a > 0:
+		p("a greater than zero")
 	default:
-		fmt.Println("default", "a=", a)
+		p("a is zero")
 	}
 }
 
 func switchValue() {
-	fmt.Println("---switchValue---")
-	a := 5
-	switch a {
-	case 1:
-		fmt.Println("a=1")
-	case 2:
-		fmt.Println("a=2")
-	case 3, 4, 5:
-		fmt.Println("a=3,4,5")
+	switch a := 1; a {
+	case 0:
+		p("a is zero")
+	case 1, 2:
+		p("a is 1 or 2")
 	default:
-		fmt.Println("default")
-	}
-}
-
-func switchInit() {
-	fmt.Println("---switchInit---")
-	switch a, b, c := 1, 2, 3; a + b + c {
-	case 1, 2, 3:
-		fmt.Println("1,2,3")
-	case 4, 5, 6:
-		fmt.Println("4,5,6")
-	default:
-		fmt.Println("default")
+		p("else, a=", a)
 	}
 }
 
 func swtichType() {
-	fmt.Println("---swtichType---")
-	var t interface{} = 1
-	switch t.(type) {
+	var a interface{} = 1
+	switch a.(type) {
 	case int:
-		fmt.Println("type:int")
+		p("int a=", a)
 	case string:
-		fmt.Println("type:string")
+		p("string a=", a)
 	default:
-		fmt.Println("type:default")
+		p("else a=", a)
 	}
 }

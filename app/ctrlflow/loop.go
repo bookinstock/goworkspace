@@ -2,11 +2,7 @@ package ctrlflow
 
 import "fmt"
 
-func init() {
-	fmt.Println("loop init")
-}
-
-func Run() {
+func loop() {
 
 	// for
 	for i := 0; i < 5; i++ {
