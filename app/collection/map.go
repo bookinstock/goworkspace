@@ -1,8 +1,8 @@
-package hashmap
+package collection
 
 import "fmt"
 
-func Run() {
+func RunMap() {
 
 	// init make
 	m := make(map[string]int, 3)

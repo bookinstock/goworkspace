@@ -1,4 +1,4 @@
-package list
+package collection
 
 import "fmt"
 

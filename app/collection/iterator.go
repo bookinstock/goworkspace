@@ -2,7 +2,7 @@ package collection
 
 import "fmt"
 
-func Run() {
+func RunIterator() {
 	s := []int{1, 2, 3, 4, 5}
 	fmt.Println("s=", s)
 
