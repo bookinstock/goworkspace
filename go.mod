@@ -10,6 +10,7 @@ require (
 	github.com/go-redis/redis_rate/v9 v9.1.2 // indirect
 	github.com/go-redis/redismock/v8 v8.0.6 // indirect
 	github.com/panjf2000/ants/v2 v2.4.7 // indirect
+	github.com/stretchr/testify v1.7.0 // indirect
 	github.com/vmihailenco/bufpool v0.1.11 // indirect
 	github.com/vmihailenco/tagparser v0.1.2 // indirect
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c // indirect
