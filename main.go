@@ -2,9 +2,7 @@ package main
 
 import (
 	"fmt"
-	"goworkspace/app/collection"
-	"goworkspace/app/ctrlflow"
-	"goworkspace/app/object"
+	"goworkspace/app/goroutine/ants"
 )
 
 func init() {
@@ -14,9 +12,11 @@ func init() {
 func main() {
 	fmt.Println("main run")
 
-	ctrlflow.Run()
-	collection.Run()
-	object.Run()
+	// ctrlflow.Run()
+	// collection.Run()
+	// object.Run()
+
+	// ---
 
 	// foo.Run()
 
@@ -77,4 +77,7 @@ func main() {
 
 	// redisx.RunExample1()
 	// redisx.Run()
+
+	ants.Example1()
+	ants.Example2()
 }
